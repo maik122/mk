@@ -1,0 +1,681 @@
+/* ======================================
+  CSS Variables
+====================================== */
+:root {
+  --primary-bg-color: #7d6e59;
+  --primary-text-color: #fff;
+  --secondary-bg-color: #f4f4f9;
+  --secondary-text-color: #333;
+  --accent-color: #c6b59d;
+}
+
+/* ======================================
+  Global Styles
+====================================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0 auto; /* Center the body */
+  padding: 0 5px; /* Side padding */
+  max-width: 1200px; /* Set a max width */
+  background-color: var(--secondary-bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--secondary-text-color);
+}
+
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* ======================================
+  Responsive Styles
+====================================== */
+@media screen and (max-width: 768px) {
+  .container, .project-grid {
+    width: 95%;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  .project-card, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    text-align: center;
+    gap: 10px;  }
+}
+
+/* ======================================
+  Profile Photo Styles
+====================================== */
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ======================================
+  Section Styling
+====================================== */
+section {
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+/* ======================================
+  Dark Theme Styling
+====================================== */
+.dark-theme {
+  background-color: #1e1e1e;
+  color: #f1f1f1; /* Text color for dark theme */
+}
+
+.dark-theme section,.dark-theme .project-card {
+  background-color: #444; /* Section and footer background */
+  color: #f1f1f1; /* Text color */
+  
+}
+
+.dark-theme .project-card {
+  background-color: #333; /* Card background */
+  border: 1px solid #666; /* Adjust border for dark theme */
+}
+
+.card-description {
+  padding: 10px; /* Padding for description */
+  background: #fff; /* Background color for description in light mode */
+}
+
+.card-description {
+  background: #222; /* Dark background for description in dark mode */
+}
+
+.card-images {
+  padding: 10px; /* Padding for images */
+  background: #f0f0f0; /* Light background for images in light mode */
+}
+
+/* Dark Theme Styling for Project Cards */
+.dark-theme .project-card {
+  background-color: #5e5959 !important; /* Dark background for cards */
+  border: 1px solid #797878; /* Darker border for the cards */
+  color: #f1f1f1; /* Ensure text inside cards is also light */
+}
+
+.dark-theme .card-description {
+  background-color: #767676 !important; /* Dark background for descriptions */
+  color: #f1f1f1 !important; /* Light text color */
+}
+
+.dark-theme .card-images {
+  background-color: #7e7b7b !important; /* Dark background for images container */
+}
+
+
+/*the switch*/
+
+/* Toggle Switch Container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* Width of the toggle switch */
+  height: 34px; /* Height of the toggle switch */
+  margin-right: 15px; /* Space between switch and text */
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0; /* Hide the checkbox */
+  width: 0;
+  height: 0;
+}
+
+/* Slider Styles */
+.slider {
+  position: absolute;
+  cursor: pointer; /* Pointer cursor on hover */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* Background color for the switch */
+  transition: .4s; /* Smooth transition */
+  border-radius: 34px; /* Rounded corners */
+}
+
+/* Circle for the switch */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; /* Height of the toggle circle */
+  width: 26px; /* Width of the toggle circle */
+  left: 4px; /* Spacing from the left */
+  bottom: 4px; /* Spacing from the bottom */
+  background-color: white; /* Circle color */
+  transition: .4s; /* Smooth transition */
+  border-radius: 50%; /* Circle shape */
+}
+
+/* Checkbox Checked State */
+input:checked + .slider {
+  background-color: #52a6ff; /* Blue when checked */
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Move the circle to the right */
+}
+
+
+/* ======================================
+  Project and Skills Grid
+====================================== */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px; /* You can adjust this to control the total width */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.project-grid {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+  gap: 20px;
+}
+
+/* ==================== 🧠 PROJECT CARD ==================== */
+.project-card {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+/* ==================== 📹 PROJECT VIDEO ==================== */
+.project-video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure cards are responsive */
+@media screen and (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(1, 1fr); /* Stack cards on smaller screens */
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill the card */
+}
+
+.card-description {
+  padding: 10px; /* Add padding around the description */
+  background: #fff; /* Background color for description */
+  flex: 0 0 auto; /* Keep the description at its natural height */
+}
+
+.card-images {
+  flex: 1; /* Allow the images to take up the remaining space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px; /* Optional: add padding */
+  background: #f0f0f0; /* Background color for the image area */
+}
+
+.card-images img {
+  width: 100%; /* Set images to fill the container */
+  margin-bottom: 10px; /* Space between images */
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  text-align: center;
+  gap: 10px;
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* ======================================
+  Header and Footer Styling
+====================================== */
+header {
+  background: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0;
+}
+
+footer {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* ======================================
+  Contact Section
+====================================== */
+#contact {
+  background: #333;
+  color: var(--primary-text-color);
+  padding: 20px;
+  text-align: center;
+}
+
+#contact p, #contact a {
+  margin-top: 10px;
+}
+
+.resume-download {
+  display: inline-block;
+  background-color: #48535f;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.resume-download:hover {
+  background-color: darken(#48535f, 10%);
+}
+
+/* ======================================
+  Navbar Styling
+====================================== */
+nav {
+  background-color: var(--primary-bg-color);
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Floating effect */
+}
+
+ul.navbar {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.navbar li {
+  margin: 0 20px; /* Spacing */
+}
+
+ul.navbar li a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul.navbar li a:hover {
+  background-color: var(--secondary-text-color);
+  color: var(--accent-color);
+  border-radius: 10px;
+}
+
+/* Underline effect on hover */
+ul.navbar li a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--accent-color);
+  visibility: hidden;
+  transform: translateX(-50%) scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+ul.navbar li a:hover::before {
+  visibility: visible;
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+  ul.navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul.navbar li {
+    margin: 10px 0;
+  }
+}
+
+/* ======================================
+  Download Text Styling
+====================================== */
+.download-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--secondary-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* ======================================
+  Letter Animation
+====================================== */
+.letter-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.letter-image:hover .animated-mail {
+  transform: translateY(50px);
+}
+
+.animated-mail {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  transition: 0.4s;
+}
+
+.letter {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 160px;
+  height: 60px;
+  background: white;
+  transition: 0.4s 0.2s;
+}
+
+/* Contact Section Container */
+.contact-section {
+  background: var(--secondary-bg-color);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  color: var(--secondary-text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contact Title */
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 22px;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--secondary-text-color);
+}
+
+.form-group label span {
+  color: var(--accent-color);
+}
+
+/* Inputs and Textarea */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(--secondary-text-color);
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  background-color: #f9f9f9;
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  border: none;
+  padding: 14px 35px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-bg-color);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 20px 15px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 15px 0;
+  }
+}
+
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
+
+  form button[type="submit"] {
+    width: 100%;
+    padding: 15px 0;
+  }
+}
+
+/* ======================================
+  Keyframes
+====================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ======================================
+  Miscellaneous
+====================================== */
+.center-wrapper {
+  display: flex;
+  flex-direction: column; /* This will stack items vertically */
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+#education {
+  max-width: 700px;
+  margin: 40px auto 80px auto;
+  padding: 0 20px;
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid #ddd;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  background-color: #22491d;
+  box-shadow: 0 0 10px rgba(56, 142, 60, 0.8);
+}
+
+.timeline-content {
+  margin-left: 25px;
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin: 0 0 6px 0;
+  color: #333;
+  font-weight: 700;
+}
+
+.edu-year {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.timeline-content ul li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #education {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .timeline {
+    padding-left: 20px;
+    border-left-width: 1.5px;
+  }
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+    left: -9px;
+    top: 7px;
+  }
+}
